@@ -1,0 +1,14 @@
+PROCEDURE triparinsertion (VAR arr: ARRAY_OF INTEGER)
+VAR
+    i,j,temp:INTEGER
+BEGIN
+   FOR i FROM 1 TO arr.length-1 DO
+       temp := arr[i]
+       j := i-1
+       WHILE (j>=0 AND arr[j] > temp) DO
+            arr[j+1] := arr[j]
+            j := j-1;
+       END_WHILE
+       arr[j+1] = temp;
+    END_FOR
+END
